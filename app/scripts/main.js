@@ -1,8 +1,17 @@
 /* jshint devel:true */
 
-var uberClientId = "WcDY4toB0xogrSdkoXj4azFMmOdNf0HA", 
-    uberServerToken = "XQysa0CmCYawqY6t8v7eWsaS7Xb3rOIRb38zqulZ",
-    //Uber API stuff
+//var events = require("../uber.json");
+////var _ = require('lodash');
+
+//
+//$.getJSON("uber.json", function(key, value){
+//    $("#time").append("<p>"+value.prices+"</p>");
+//});
+//
+//
+//var uberClientId = "WcDY4toB0xogrSdkoXj4azFMmOdNf0HA", 
+//    uberServerToken = "XQysa0CmCYawqY6t8v7eWsaS7Xb3rOIRb38zqulZ",
+//    //Uber API stuff
 
 var userLatitude, 
     userLongitude,
@@ -13,7 +22,9 @@ var userLatitude,
     //becoming end_latitude end_longitude
 
 navigator.geolocation.getCurrentPosition(function (position) {
-//    console.log(position);
+    console.log(position);
     userLatitude = position.coords.latitude;
     userLongitude = position.coords.longitude;
 });
+
+//var data = 
