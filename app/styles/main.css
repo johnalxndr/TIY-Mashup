@@ -1,10 +1,20 @@
-img {
-    opacity: .6;
-    height: 100%;
-    width: 100%;
-    
+body { 
+  background: url(http://static2.businessinsider.com/image/52407393eab8ea475d8b4567/chipotle-is-one-step-closer-to-entering-the-breakfast-market.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
 }
 
-#googleMap {
-    position: relative;
+#googleMap{
+    margin-top:10em;
+    border:solid 10px #581515
 }
+    
+h1 {
+    font-family: 'Ceviche One', cursive;
+    color: white;
+}
+

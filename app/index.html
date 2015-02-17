@@ -16,16 +16,19 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+      <link href='http://fonts.googleapis.com/css?family=Ceviche+One' rel='stylesheet' type='text/css'>
   </head>
   <body>
   
-      <img src="http://www.cirrusinsight.com/wp-content/uploads/2014/05/chipotle-is-one-step-closer-to-entering-the-breakfast-market.jpg">
+  
       
       <div class="container">
           
+          <h1>Burrito Quest</h1>
           
+          <div id="googleMap" class="img-responsive center-block " style="width:300px;height:300px; border-radius: 50%;"></div>
           
-<div id="googleMap" style="width:500px;height:380px;"></div>
+            <div id="map-canvas"></div>
           
       </div>
       
@@ -36,19 +39,18 @@
       
       
       
-      
 
-
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="../bower_components/jquery/dist/jquery.js"></script>
-       <script
-              src="http://maps.googleapis.com/maps/api/js"></script>
+        
+       
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
+      <script src="http://maps.googleapis.com/maps/api/js"></script>
         <script src="scripts/main.js"></script>
      
         <!-- endbuild -->
