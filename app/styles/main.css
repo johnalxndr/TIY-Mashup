@@ -1,7 +1,11 @@
-body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+body { 
+ background: url(http://static2.businessinsider.com/image/52407393eab8ea475d8b4567/chipotle-is-one-step-closer-to-entering-the-breakfast-market.jpg) no-repeat center center fixed; 
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+color:#333
 }
 
 .hero-unit {
@@ -38,5 +42,13 @@ body {
     text-align: right;
     margin-top: 2%;
     padding-top: 5ex;
-    padding-right: 3ex;
+    padding-right: 3ex;   
+}
+#googleMap{
+   margin-top:10em;
+   border:solid 10px #581515 
+}   
+h1 {
+   font-family: 'Ceviche One', cursive;
+   color: white;
 }
