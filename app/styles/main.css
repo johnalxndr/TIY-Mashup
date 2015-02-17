@@ -4,3 +4,7 @@ img {
     width: 100%;
     
 }
+
+#googleMap {
+    position: relative;
+}
