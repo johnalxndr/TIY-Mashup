@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 body { 
  background: url(http://static2.businessinsider.com/image/52407393eab8ea475d8b4567/chipotle-is-one-step-closer-to-entering-the-breakfast-market.jpg) no-repeat center center fixed; 
@@ -7,25 +8,30 @@ body {
  background-size: cover;
  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 color:#333
+=======
+body { 
+    background: url(http://static2.businessinsider.com/image/52407393eab8ea475d8b4567/chipotle-is-one-step-closer-to-entering-the-breakfast-market.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color:#333;
+>>>>>>> 229e822d0e21112ee278fddf2ac70cc954be0595
 }
-
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
+.page-header{
+    text-align: center;
+    color: white;
 }
-
-.hero-unit h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
+.page-header small{
+    color:white;
 }
-
+h1{
+    color: white;
+}
+small{
+    color:white;
+}
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -39,6 +45,7 @@ color:#333
     height: 4em;
     margin: 0 auto;
 }
+<<<<<<< HEAD
 #time{
     text-align: right;
     margin-top: 2%;
@@ -53,3 +60,25 @@ h1 {
    font-family: 'Ceviche One', cursive;
    color: white;
 }
+=======
+#googleMap{
+    margin-top:6em;
+    border:solid 10px #581515; 
+    margin-bottom:5em;
+}  
+#price{
+    padding-top:2px;
+    text-align: right;
+    padding-right: 4.3ex;
+    font-size: 2ex;
+}
+#time{
+    text-align: right;
+    padding-right: 4ex;
+    font-size: 2ex;
+}
+a{
+    text-decoration: none;
+}
+
+>>>>>>> 229e822d0e21112ee278fddf2ac70cc954be0595
