@@ -22,7 +22,7 @@ $(document).ready(function () {
             timer = setInterval(function () {
                 getRates(userLatitude, userLongitude);
 
-            }, 100);
+            }, 60000);
             console.debug(userLatitude)
                 //    getRates(userLatitude,userLongitude);
         }
