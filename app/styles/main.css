@@ -1,17 +1,23 @@
 body { 
- background: url(http://static2.businessinsider.com/image/52407393eab8ea475d8b4567/chipotle-is-one-step-closer-to-entering-the-breakfast-market.jpg) no-repeat center center fixed; 
- -webkit-background-size: cover;
- -moz-background-size: cover;
- -o-background-size: cover;
- background-size: cover;
- font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-color:#333
+    background: url(http://static2.businessinsider.com/image/52407393eab8ea475d8b4567/chipotle-is-one-step-closer-to-entering-the-breakfast-market.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color:#333;
 }
 .page-header{
     text-align: center;
     color: white;
 }
 .page-header small{
+    color:white;
+}
+h1{
+    color: white;
+}
+small{
     color:white;
 }
 .browsehappy {
@@ -43,5 +49,7 @@ color:#333
     padding-right: 4ex;
     font-size: 2ex;
 }
-
+a{
+    text-decoration: none;
+}
 
