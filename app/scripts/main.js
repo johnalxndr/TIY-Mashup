@@ -1,7 +1,8 @@
 /* jshint devel:true */
 //
 
-$(document).ready(function(){
+
+$(document).ready(function() {
     
     var data = {"prices":[{"localized_display_name":"uberX","duration":422,"low_estimate":4,"display_name":"uberX","product_id":"57e6c58d-8ba2-4628-b1c9-6187514731cb","distance":2.97,"surge_multiplier":1.0,"estimate":"$4-6","high_estimate":6,"currency_code":"USD"},{"localized_display_name":"uberXL","duration":422,"low_estimate":9,"display_name":"uberXL","product_id":"8a268564-02e8-4fac-9aaf-df071e120d49","distance":2.97,"surge_multiplier":1.0,"estimate":"$9-12","high_estimate":12,"currency_code":"USD"}]}    
     
@@ -46,10 +47,40 @@ var marker = new google.maps.Marker({
 marker.setMap(map);
 };
 google.maps.event.addDomListener(window, 'load', initialize);    
+
+
+
+
+var uberClientId = "WcDY4toB0xogrSdkoXj4azFMmOdNf0HA", 
+ uberServerToken = "XQysa0CmCYawqY6t8v7eWsaS7Xb3rOIRb38zqulZ";
+//    //Uber API stuff
+//
+var userLatitude = 28.541220,
+    userLongitude = -81.381259;
+    //becoming start_latitude start_longitude
     
-
-$("a")
-
+    chipotleLatitude = 28.553572, 
+    chipotleLongitude = -81.34691;
+//    //becoming end_latitude end_longitude
+//
+//
+//
+//$("a").click(function(event){
+//////redirecting to uber mobile web app
+//var uberURL = "https://m.uber.com/sign-up?";
+////});
+//////
+////Params
+//uberURL += "client_id=" + uberClientId;
+//    if (typeof userLatitude != typeof undefined) uberURL += "&" + "pickup_latitude=" + userLatitude;
+//    if (typeof userLongitude != typeof undefined) uberURL += "&" + "pickup_longitude=" + userLongitude;
+//    uberURL += "&" + "dropoff_latitude=" + chipotleLatitude;
+//    uberURL += "&" + "dropoff_latitude=" + chipotleLongitude;
+//    uberURL += "&" + "dropoff_nickname=" + "Chipotle!";
+//console.log("uberURL");
+//// redirect back to uber
+//window.location.href = uberURL;
+//});
 
 
 
@@ -69,17 +100,7 @@ $("a")
 
 
 
-//    var uberClientId = "WcDY4toB0xogrSdkoXj4azFMmOdNf0HA", 
-//    uberServerToken = "XQysa0CmCYawqY6t8v7eWsaS7Xb3rOIRb38zqulZ";
-////    //Uber API stuff
-//
-//var userLatitude, 
-//    userLongitude,
-//    //becoming start_latitude start_longitude
-//    
-//    chipotleLatitude = 28.553572, 
-//    chipotleLongitude = -81.34691;
-//    //becoming end_latitude end_longitude
+
 //
 //navigator.geolocation.getCurrentPosition(function (position) {
 //    console.log(position);
