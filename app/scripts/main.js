@@ -10,8 +10,8 @@ $(document).ready(function(){
 var price = data.prices[0].estimate;
 var estimate = Math.floor(data.prices[0].duration / 60);
     
-$("#price").html(price);
-$("#time").html("Estimate Time of Pickup: " + estimate);
+$("#price").html("Est. cost of trip: " + price);
+$("#time").html("Est. Time of Pickup: " + estimate + "min");
 
 });    
 //   
@@ -35,9 +35,9 @@ var mapProp = {
  mapTypeId:google.maps.MapTypeId.ROADMAP
  };
 
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
-var marker=new google.maps.Marker({
+var marker = new google.maps.Marker({
  position:myCenter,
  animation:google.maps.Animation.BOUNCE,
  
@@ -48,7 +48,7 @@ marker.setMap(map);
 google.maps.event.addDomListener(window, 'load', initialize);    
     
 
-
+$("a")
 
 
 
