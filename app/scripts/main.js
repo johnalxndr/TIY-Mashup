@@ -1,111 +1,79 @@
-/* jshint devel:true */
-//
+$(document).ready(function () {
+
+    //Uber API stuff  
+    var uberClientId = "WcDY4toB0xogrSdkoXj4azFMmOdNf0HA",
+        uberServerToken = "XQysa0CmCYawqY6t8v7eWsaS7Xb3rOIRb38zqulZ";
 
 
-$(document).ready(function() {
-//    
-//    var data = {"prices":[{"localized_display_name":"uberX","duration":422,"low_estimate":4,"display_name":"uberX","product_id":"57e6c58d-8ba2-4628-b1c9-6187514731cb","distance":2.97,"surge_multiplier":1.0,"estimate":"$4-6","high_estimate":6,"currency_code":"USD"},{"localized_display_name":"uberXL","duration":422,"low_estimate":9,"display_name":"uberXL","product_id":"8a268564-02e8-4fac-9aaf-df071e120d49","distance":2.97,"surge_multiplier":1.0,"estimate":"$9-12","high_estimate":12,"currency_code":"USD"}]}    
-//    
-//    
+    var userLatitude,
+        userLongitude,
+        chipotleLatitude = 28.553572,
+        chipotleLongitude = -81.34691;
+    //    //becoming end_latitude end_longitude   
 
-//var price = data.prices[0].estimate;
-//var estimate = Math.floor(data.prices[0].duration / 60);
-//    
-//$("#price").html("Est. cost of trip: " + price);
-//$("#time").html("Est. Time of Pickup: " + estimate + "min");
-//
-//});    
- 
-    $.getJSON('https://api.uber.com/v1/estimates/price?start_latitude=28.541220&start_longitude=-81.381259&end_latitude=28.553572&end_longitude=-81.34691&server_token=XQysa0CmCYawqY6t8v7eWsaS7Xb3rOIRb38zqulZ/?callback?', function(data) {
-       
-    console.log(data.prices[0].estimate);
+    var timer;
+
+    // GET USERS GEO LOCATION
+    navigator.geolocation.watchPosition(function (position) {
+        userLatitude = position.coords.latitude;
+        userLongitude = position.coords.longitude;
+
+        if (typeof timer === typeof undefined) {
+            timer = setInterval(function () {
+                getRates(userLatitude, userLongitude);
+
+            }, 100);
+            console.debug(userLatitude)
+                //    getRates(userLatitude,userLongitude);
+        }
     });
 
 
-    
-//---------------//GOOGLE MAPS API//--------------------    
+    function getRates(latitude, longitude) {
+        console.log("requesting..");
+        $.ajax({
+            url: "https://api.uber.com/v1/estimates/price",
+            headers: {
+                Authorization: "Token " + uberServerToken
+            },
+            data: {
+                start_latitude: latitude,
+                start_longitude: longitude,
+                end_latitude: chipotleLatitude,
+                end_longitude: chipotleLongitude
+            },
+            success: function (result) {
+                console.log(JSON.stringify(result));
+                var data = result["prices"];
+                //                console.log(data);
 
-
-
-function initialize() {
-    
-var myCenter = new google.maps.LatLng(28.553572,-81.34691);
-var marker ;
-var mapProp = {
- center:myCenter,
- zoom:18,
- mapTypeId:google.maps.MapTypeId.ROADMAP
- };
-
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-var marker = new google.maps.Marker({
- position:myCenter,
- animation:google.maps.Animation.BOUNCE,
- 
+                var uberx = data[0]
+                if (typeof uberx != typeof undefined) {
+                    console.log("updating time..");
+                    $("#time").html("IN " + Math.floor(uberx.duration / 60.0) + "MIN");
+                    $("#price").html("FOR $ " + uberx.low_estimate);
+                }
+            }
+        });
+    };
 });
 
-marker.setMap(map);
-};
-google.maps.event.addDomListener(window, 'load', initialize);    
+$("a").click(function (event) {
+    // Redirect to Uber API via deep-linking to the mobile web-app
+    var uberURL = "https://m.uber.com/sign-up?";
+    var uberClientId = "WcDY4toB0xogrSdkoXj4azFMmOdNf0HA";
+    var userLatitude,
+        userLongitude,
+        chipotleLatitude = 28.553572,
+        chipotleLongitude = -81.34691;
+    // Add parameters
+    uberURL += "client_id=" + uberClientId;
+    if (typeof userLatitude != typeof undefined) uberURL += "&" + "pickup_latitude=" + userLatitude;
+    if (typeof userLongitude != typeof undefined) uberURL += "&" + "pickup_longitude=" + userLongitude;
+    uberURL += "&" + "dropoff_latitude=" + chipotleLatitude;
+    uberURL += "&" + "dropoff_longitude=" + chipotleLongitude;
+    uberURL += "&" + "dropoff_nickname=" + "Thinkful";
 
-
-
-
-
-
-
-
-
-
-
-
-
-//var uberClientId = "WcDY4toB0xogrSdkoXj4azFMmOdNf0HA", 
-// uberServerToken = "XQysa0CmCYawqY6t8v7eWsaS7Xb3rOIRb38zqulZ";
-////    //Uber API stuff
-////
-//var userLatitude = 28.541220,
-//    userLongitude = -81.381259;
-//    //becoming start_latitude start_longitude
-//    
-//    chipotleLatitude = 28.553572, 
-//    chipotleLongitude = -81.34691;
-////    //becoming end_latitude end_longitude
-
-
-
-
-
-
-
-
-
-
-//ON CLICK FUNCTION TO DIRECT TO M.UBER
-//$("a").click(function(event){
-//////redirecting to uber mobile web app
-//var uberURL = "https://m.uber.com/sign-up?";
-////});
-//////
-////Params
-//uberURL += "client_id=" + uberClientId;
-//    if (typeof userLatitude != typeof undefined) uberURL += "&" + "pickup_latitude=" + userLatitude;
-//    if (typeof userLongitude != typeof undefined) uberURL += "&" + "pickup_longitude=" + userLongitude;
-//    uberURL += "&" + "dropoff_latitude=" + chipotleLatitude;
-//    uberURL += "&" + "dropoff_latitude=" + chipotleLongitude;
-//    uberURL += "&" + "dropoff_nickname=" + "Chipotle!";
-//console.log("uberURL");
-//// redirect back to uber
-//window.location.href = uberURL;
-//});
-
-
-
-
-// GET USERS GEO LOCATION
-//navigator.geolocation.getCurrentPosition(function (position) {
-//    console.log(position);
-//    userLatitude = position.coords.latitude;
-//    userLongitude = position.coords.longitude;
-//});
+    // Redirect to Uber
+    window.location.href = uberURL;
+});
