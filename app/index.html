@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
@@ -18,73 +19,57 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    
-<div class="container">
-<<<<<<< HEAD
-    <h1>Burrito Quest</h1>
-<div id="googleMap" class="img-responsive center-block " style="width:300px;height:300px; border-radius: 50%;"></div>
-<div id="map-canvas"></div>
+     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+   <![endif]-->
 
-<div class="button">
-    <p id="price"></p>   
-    <p id="time"></p>
-</div>
-=======
- 
-<div class="page-header">
-  <h1>Burrito Quest</h1>
-</div>
-    <p><small>Making DT Orlando a better place, one burrito at a time.</small></p>
+    <div class="container">
+
+        <div class="page-header">
+            <h1>Burrito Quest</h1>
+        </div>
+
+        <div id="googleMap" class="img-responsive center-block " style="width:300px;height:300px; border-radius: 50%;"></div>
+        <div id="map-canvas"></div>
 
 
-<div id="googleMap" class="img-responsive center-block " style="width:300px;height:300px; border-radius: 50%;"></div>
-<div id="map-canvas"></div>
+        <a href="">
+            <div class="button">
+                <p id="price"></p>
+                <p id="time"></p>
+            </div>
+        </a>
+    </div>
+    <!-------Container--->
 
 
-<a href="">
-<div class="button">
-    <p id="price"></p>   
-    <p id="time"></p>
-</div>
-</a>
-</div><!-------Container--->
 
-    
-    
-    
-    
-    
-    
-    
-    
 
-    
 
->>>>>>> 229e822d0e21112ee278fddf2ac70cc954be0595
 
-</div><!-------Container--->
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function () {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
     </script>
     <script src="../bower_components/jquery/dist/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
@@ -95,9 +80,11 @@
     <!-- endbower -->
     <!-- endbuild -->
     <script src="http://maps.googleapis.com/maps/api/js"></script>
-        <!-- build:js scripts/main.js -->
-    
-    <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+
+<!--   <script src="scripts/main.js"></script>-->
+    <script src="scripts/maps.js"></script>
+    <!-- endbuild -->
 </body>
+
 </html>
