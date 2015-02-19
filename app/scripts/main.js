@@ -9,7 +9,7 @@ $(document).ready(function () {
         userLongitude,
         chipotleLatitude = 28.553572,
         chipotleLongitude = -81.34691;
-    //    //becoming end_latitude end_longitude   
+    //becoming end_latitude end_longitude   
 
     var timer;
 
